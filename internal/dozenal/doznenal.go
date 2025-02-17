@@ -14,6 +14,7 @@ func ToBase12(num int) string {
 	numStr := strings.ToUpper(strconv.FormatInt(int64(num), 12))
 	numStr = strings.ReplaceAll(numStr, "A", "X")
 	numStr = strings.ReplaceAll(numStr, "B", "E")
+
 	return numStr
 }
 

@@ -15,8 +15,8 @@ func main() {
 	maxI, err := dozenal.FromBase12(*maxB10)
 	if err != nil {
 		panic(err)
-	} else if maxI == 0 {
-		fmt.Println("The maximum number must be greater than 0")
+	} else if maxI < 2 {
+		fmt.Println("The sum must be greater than 1")
 		return
 	}
 
