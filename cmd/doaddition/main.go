@@ -12,12 +12,13 @@ import (
 func main() {
 	maxB10 := flag.String("max", "10", "The maximum number to add to")
 	flag.Parse()
-	fmt.Println(*maxB10)
 	maxI, err := dozenal.FromBase12(*maxB10)
 	if err != nil {
 		panic(err)
+	} else if maxI == 0 {
+		fmt.Println("The maximum number must be greater than 0")
+		return
 	}
-	fmt.Println(maxI)
 
 	var prev int
 	for {
@@ -27,7 +28,7 @@ func main() {
 		}
 		prev = n
 		nn := maxI - n
-		fmt.Println(fmt.Sprintf("%s + ? = 10", dozenal.ToBase12(n)))
+		fmt.Println(fmt.Sprintf("%s + ? = %s", dozenal.ToBase12(n), dozenal.ToBase12(maxI)))
 		reader := bufio.NewReader(os.Stdin)
 		input, _ := reader.ReadString('\n')
 		input = strings.TrimSpace(input)
