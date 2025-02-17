@@ -15,3 +15,6 @@ go run ./cmd/doaddition/main.go
 ```
 go build -o doaddition.exe ./cmd/doaddition/main.go
 ```
+
+### Options:
+* `-max` sets the sum that you want to practice adding to. Default is `10`.
