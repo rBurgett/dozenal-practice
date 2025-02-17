@@ -30,14 +30,17 @@ func main() {
 		prev = n
 		nn := maxI - n
 		fmt.Println(fmt.Sprintf("%s + ? = %s", dozenal.ToBase12(n), dozenal.ToBase12(maxI)))
-		reader := bufio.NewReader(os.Stdin)
-		input, _ := reader.ReadString('\n')
-		input = strings.TrimSpace(input)
-		inputNum, err := dozenal.FromBase12(input)
-		if err != nil {
-			fmt.Println(fmt.Sprintf("Invalid input: %s", input))
-			fmt.Println("")
-			continue
+		var inputNum int
+		for _ = range 3 {
+			reader := bufio.NewReader(os.Stdin)
+			input, _ := reader.ReadString('\n')
+			input = strings.TrimSpace(input)
+			inputNum, err = dozenal.FromBase12(input)
+			if err != nil {
+				fmt.Println(fmt.Sprintf("Invalid input: %s", input))
+			} else {
+				break
+			}
 		}
 		if inputNum == nn {
 			fmt.Println("Correct!")
