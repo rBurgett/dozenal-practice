@@ -4,7 +4,7 @@ dozenal-practice contains utilities for practicing basic dozenal arithmetic.
 ## Dozenal Addition
 
 ### Dependencies:
-Required go v1.23
+Requires go v1.23
 
 ### Run:
 ```
