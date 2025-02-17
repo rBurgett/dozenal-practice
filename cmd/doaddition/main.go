@@ -20,10 +20,11 @@ func main() {
 		return
 	}
 
-	var prev int
+	prev := 0
 	for {
 		n := dozenal.GetRandom(1, maxI)
 		if n == prev {
+			prev = 0
 			continue
 		}
 		prev = n
