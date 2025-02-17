@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	maxB10 := flag.String("max", "10", "The maximum number to add to")
+	maxB10 := flag.String("sum", "10", "The sum to add up to")
 	flag.Parse()
 	maxI, err := dozenal.FromBase12(*maxB10)
 	if err != nil {
